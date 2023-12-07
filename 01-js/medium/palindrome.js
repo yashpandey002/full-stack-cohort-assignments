@@ -4,7 +4,16 @@
 */
 
 function isPalindrome(str) {
-  return true;
+    const cleanedStr = str
+        .toLowerCase()
+        .split(" ")
+        .join("")
+        .replace(/[^\w\s]/g, "");
+
+    const reversedString = cleanedStr.split("").reverse().join("");
+    return reversedString === cleanedStr;
 }
+
+isPalindrome("Able, was I ere I saw Elba!");
 
 module.exports = isPalindrome;
